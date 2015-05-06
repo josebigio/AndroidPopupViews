@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="RidescoutTimePicker" parent="android:Widget">
+
+    </style>
+
+
+
+</resources>
