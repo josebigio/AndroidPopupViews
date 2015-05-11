@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/initialTimeBlock"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:01 AM"
+            android:textSize="25sp"
+            android:id="@+id/initialTimeTV"
+          />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/realtimeblack"
+            android:id="@+id/realtimeView"/>
+
+
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextTimeBlock"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@id/initialTimeBlock"
+        android:paddingLeft="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arrowlightgrey"
+            android:id="@+id/rightArrowTransit"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:01am"
+            android:textColor="#ffb4b4b4"
+            android:textSize="25sp"
+            android:id="@+id/nextTimeTV"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#000"-->
+        <!--android:layout_below="@id/initialTimeBlock"/>-->
+
+</RelativeLayout>

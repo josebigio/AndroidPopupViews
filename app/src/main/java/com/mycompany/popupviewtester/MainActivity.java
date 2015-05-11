@@ -1,9 +1,6 @@
 package com.mycompany.popupviewtester;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,20 +10,27 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    private Button mainButton;
+    private Button transitDemoButton;
+    private Button arrivalDemoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainButton = (Button)findViewById(R.id.main_button);
-        mainButton.setOnClickListener(new View.OnClickListener() {
+        transitDemoButton = (Button)findViewById(R.id.transitButton);
+        transitDemoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                showTransitDialog();
             }
         });
-
+        arrivalDemoButton = (Button)findViewById(R.id.arrivalButton);
+        arrivalDemoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showArrivalDialog();
+            }
+        });
 
     }
 
@@ -53,12 +57,17 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void showDialog() {
-        BasePopupList<ArrivalPopupList.SimpleTime> basePopupList = new ArrivalPopupList(MainActivity.this);
+    private void showTransitDialog() {
+        BasePopupList basePopupList = new TransitTablePopupList(MainActivity.this);
+        basePopupList.setTitle("14 NORTHBOUND");
         basePopupList.show();
 
+    }
 
-
+    private void showArrivalDialog() {
+        BasePopupList basePopupList = new ArrivalPopupList(MainActivity.this);
+        basePopupList.setTitle("Set Arrival");
+        basePopupList.show();
 
     }
 }
